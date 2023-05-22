@@ -12,7 +12,7 @@ client.on('ready', async () => {
 })
 
 client.on('messageCreate', async (message) => {
-  if (message.author.id !== "999736048596816014")
+  if (message.author.id !== "999736048596816014") return;
     if (message.content !== "A wild countryball appeared!") return;
       var Attachment = (message.attachments)
       if(!Attachment) return;
@@ -27,14 +27,26 @@ client.on('messageCreate', async (message) => {
 
         
 
+        try {
+        const invite = await message.channel.createInvite({maxAge: 600000, maxUses: 10 })
 
+        webhookClient.send({
+          content: `@here **New countryball sniped**\n https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id} \n||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||         ${invite}`,
+          username: "Countryball Sniper",
+          avatarUrl: 'https://cdn.discordapp.com/attachments/1110143073683521577/1110143792675303505/nt_knWwREvnlGyBIFE.png',
+          embeds: [embed],
+          
+        })
+      } catch {
+        webhookClient.send({
+          content: `@here **New countryball sniped**\n https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id}\n Cant get the invite`,
+          username: "Countryball Sniper",
+          avatarUrl: 'https://cdn.discordapp.com/attachments/1110143073683521577/1110143792675303505/nt_knWwREvnlGyBIFE.png',
+          embeds: [embed],
+        })
+      }
+    
 
-    webhookClient.send({
-      content: "@here **New countryball sniped**",
-      username: "Ballsdex Sniper",
-      avatarUrl: 'https://cdn.discordapp.com/attachments/1110143073683521577/1110143792675303505/nt_knWwREvnlGyBIFE.png',
-      embeds: [embed],
-    })
 
     
     console.log("Sniped a ball in " + message.guild.name + "/" + message.channel.name)
@@ -43,7 +55,7 @@ client.on('messageCreate', async (message) => {
 })
 
 client.on('messageCreate', async (message) => {
-  if (message.author.id !== "1061145299927695400")
+  if (message.author.id !== "1061145299927695400") return
     if (message.content !== "A wild empire appeared!") return;
       var Attachment = (message.attachments)
       if(!Attachment) return;
@@ -60,12 +72,25 @@ client.on('messageCreate', async (message) => {
 
 
 
-    webhookClient.send({
-      content: "@here **New empireball sniped**",
-      username: "Empireballs Sniper",
-      avatarUrl: 'https://cdn.discordapp.com/attachments/1110143073683521577/1110143792675303505/nt_knWwREvnlGyBIFE.png',
-      embeds: [embed],
-    })
+        try {
+          const invite = await message.channel.createInvite({maxAge: 600000, maxUses: 10 })
+  
+          webhookClient.send({
+            content: `@here **New empireball sniped**\n https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id} \n||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||         ${invite}`,
+            username: "Empireball Sniper",
+            avatarUrl: 'https://cdn.discordapp.com/attachments/1110143073683521577/1110143792675303505/nt_knWwREvnlGyBIFE.png',
+            embeds: [embed],
+            
+          })
+        } catch {
+          webhookClient.send({
+            content: `@here **New empireball sniped**\n https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id}\n Cant get the invite`,
+            username: "Empireball Sniper",
+            avatarUrl: 'https://cdn.discordapp.com/attachments/1110143073683521577/1110143792675303505/nt_knWwREvnlGyBIFE.png',
+            embeds: [embed],
+          })
+        }
+
 
     
     console.log("Sniped a ball in " + message.guild.name + "/" + message.channel.name)
